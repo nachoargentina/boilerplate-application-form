@@ -1,0 +1,133 @@
+{
+  "formData":
+    {
+      "id":1,
+      "creationDate": "2021-04-28",
+      "areaOfCoverage": "farming",
+      "clientId": 123456,
+      "name": "Form A - Farming basic coverage",
+      "status": "created",
+      "steps":[
+          {
+            "title":"Who is the primary contact for this policy?",
+            "description":"This person will receive all communications from Newfront about this policy. You can change this contact information later. If you're not sure, just add your contact information",
+            "questions":[
+              {
+                "defaultValue":"",
+                "description":"",
+                "fieldName":"fullName",
+                "id":1,
+                "isCustomField":false,
+                "isSharedField":true,
+                "label":"Full Name",
+                "options":null,
+                "ordinal":1,
+                "placeholder":"",
+                "required":true,
+                "type":"text",
+                "value":""
+              },
+              {
+                "defaultValue":"",
+                "description":"",
+                "fieldName":"role",
+                "id":2,
+                "isCustomField":false,
+                "isSharedField":true,
+                "label":"Role",
+                "options":null,
+                "ordinal":2,
+                "placeholder":"",
+                "required":false,
+                "type":"text",
+                "value":""
+              },
+              {
+                "defaultValue":"",
+                "description":"",
+                "fieldName":"phone",
+                "id":3,
+                "isCustomField":false,
+                "isSharedField":true,
+                "label":"Phone Number",
+                "options":null,
+                "ordinal":3,
+                "placeholder":"",
+                "required":false,
+                "type":"number",
+                "value":""
+              }
+            ]
+          },
+          {
+            "id":2,
+            "title":"Tell us about your company",
+            "description":"",
+            "ordinal":2,
+            "questions":[
+              {
+                "defaultValue":"",
+                "description":"",
+                "fieldName":"companyName",
+                "id":4,
+                "isCustomField":false,
+                "isSharedField":true,
+                "label":"Company Name",
+                "options":null,
+                "ordinal":4,
+                "placeholder":"",
+                "required":true,
+                "type":"text",
+                "value":""
+              },
+              {
+                "defaultValue":"",
+                "description":"",
+                "fieldName":"phone",
+                "id":5,
+                "isCustomField":false,
+                "isSharedField":true,
+                "label":"What is your Federal Employer Identification Number? (FEIN)",
+                "options":null,
+                "ordinal":5,
+                "placeholder":"",
+                "required":false,
+                "type":"number",
+                "value":""
+              },
+                {
+                  "defaultValue":"",
+                  "description":"",
+                  "fieldName":"options",
+                  "id":6,
+                  "isCustomField":false,
+                  "isSharedField":true,
+                  "label":"Options",
+                  "ordinal":3,
+                  "placeholder":"",
+                  "required":false,
+                  "type":"radio",
+                  "value":"",
+                  "options":[
+                      {
+                        "id":1,
+                        "optionId":0,
+                        "label":"Option A"
+                      },
+                      {
+                        "id":2,
+                        "optionId":1,
+                        "label":"Option B"
+                      },
+                      {
+                        "id":3,
+                        "optionId":2,
+                        "label":"Option C"
+                      }
+                  ]
+                }
+            ]
+          }
+      ]
+    }
+}

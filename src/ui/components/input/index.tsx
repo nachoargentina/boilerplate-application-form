@@ -30,6 +30,7 @@ interface Props {
   maxLength?: number;
   name?: string;
   onChange?: ChangeHandler;
+  handleChangeSyntheticEvent?: boolean;
   onFocus?: () => unknown;
   onBlur?: (value?: string) => unknown;
   placeholder?: string;
@@ -76,6 +77,7 @@ function InputControl(props: Props): JSX.Element {
     maxLength,
     name,
     onChange,
+    handleChangeSyntheticEvent,
     onFocus,
     onBlur,
     placeholder,
@@ -97,7 +99,7 @@ function InputControl(props: Props): JSX.Element {
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void {
     if (debouncedOnChange) {
-      debouncedOnChange(e.target.value);
+      handleChangeSyntheticEvent ? debouncedOnChange(e) : debouncedOnChange(e.target.value);
     }
   }
 
@@ -132,7 +134,10 @@ function InputControl(props: Props): JSX.Element {
         onChange={handleChange}
         onFocus={onFocus}
         onBlur={(e) => {
-          if (onBlur) onBlur(e.target.value);
+          if (onBlur) {
+            // eslint-disable-next-line no-unused-expressions
+            handleChangeSyntheticEvent ? onBlur(e) : onBlur(e.target.value);
+          }
         }}
         style={style}
       />
@@ -161,7 +166,10 @@ function InputControl(props: Props): JSX.Element {
         onChange={handleChange}
         onFocus={onFocus}
         onBlur={(e) => {
-          if (onBlur) onBlur(e.target.value);
+          if (onBlur) {
+            // eslint-disable-next-line no-unused-expressions
+            handleChangeSyntheticEvent ? onBlur(e) : onBlur(e.target.value);
+          }
         }}
         autoComplete={autoComplete === true || autoComplete === 'on' ? 'on' : 'off'}
       />
@@ -186,10 +194,7 @@ export function Input(props: Props): JSX.Element {
   return (
     <StyledInputWrapper type={type}>
       {/* eslint-disable-next-line */}
-      <InputControl
-        {...props}
-        style={styles}
-      />
+      <InputControl {...props} style={styles} />
       <div className="input-icon">{icon}</div>
       {appendText ? (
         <StyledAppendedText ref={targetRef}>

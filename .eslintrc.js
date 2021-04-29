@@ -62,6 +62,7 @@ module.exports = {
       'singleQuote': true,
       'trailingComma': 'all',
       'jsxBracketSameLine': false,
+      "endOfLine":"auto",
       'arrowParens': 'always'
     }],
     'import/no-unresolved': 'off',
